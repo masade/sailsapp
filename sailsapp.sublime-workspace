@@ -421,11 +421,21 @@
 	},
 	"expanded_folders":
 	[
-		"/D/node/sailsapp"
+		"/D/node/sailsapp",
+		"/D/node/sailsapp/.tmp/public",
+		"/D/node/sailsapp/.tmp/public/js",
+		"/D/node/sailsapp/.tmp/public/styles",
+		"/D/node/sailsapp/config/env"
 	],
 	"file_history":
 	[
+		"/D/node/sailsapp/config/env/development.js",
+		"/D/node/sailsapp/config/env/production.js",
+		"/D/node/sailsapp/config/local.js",
+		"/D/node/sailsapp/README.md",
 		"/D/node/sailsapp/package.json",
+		"/D/node/sailsapp/.editorconfig",
+		"/D/node/sailsapp/.gitignore",
 		"/D/xampp/htdocs/alumniwiki/config/database.php",
 		"/D/node/a1/index.html",
 		"/C/Users/Masade/AppData/Roaming/Sublime Text 3/Packages/User/node-apprt.sublime-snippet",
@@ -546,17 +556,11 @@
 		"/D/xampp/htdocs/wow/application/views/includes/common/pageheader.php",
 		"/C/Users/Masade/AppData/Local/Temp/scp28904/var/www/html/live/wow/application/config/config.php",
 		"/D/xampp/htdocs/wow/application/static/js/dashboard_feed.js",
-		"/C/Users/Masade/AppData/Local/Temp/scp28089/var/www/html/live/wow/application/config/program_config.php",
-		"/D/xampp/htdocs/wow/docs/sql/v5_batch_rebuild.sql",
-		"/D/xampp/htdocs/wow/application/config/recaptcha.php",
-		"/D/xampp/htdocs/wow/application/controllers/accounts/user.php",
-		"/D/xampp/htdocs/wow/application/controllers/admin_blocks.php",
-		"/D/xampp/htdocs/wow/application/controllers/admin_funds.php",
-		"/D/xampp/htdocs/wow/application/controllers/batch/members.php"
+		"/C/Users/Masade/AppData/Local/Temp/scp28089/var/www/html/live/wow/application/config/program_config.php"
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -792,6 +796,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"envprodu",
+				"config\\env\\production.js"
+			],
 			[
 				"dat",
 				"config\\database.php"
@@ -1299,10 +1307,6 @@
 			[
 				"username.",
 				"application\\views\\includes\\profile\\edit\\username.php"
-			],
-			[
-				"profilenav",
-				"application\\views\\includes\\profile\\nav.php"
 			]
 		],
 		"width": 0.0

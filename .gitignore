@@ -81,11 +81,6 @@ bower_components
 .tmp
 dump.rdb
 
-sailsapp.sublime-project
-
-
-
-
 
 ################################################
 # Node.js / NPM
@@ -118,3 +113,6 @@ npm-debug.log
 nbproject
 .idea
 .node_history
+
+*.sublime-project
+*.sublime-workspace
