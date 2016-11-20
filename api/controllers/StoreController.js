@@ -6,24 +6,43 @@
  */
 
 module.exports = {
-	home:	function (req,res) {
+	_config: {
+    	actions: false,
+    	// rest: false,
+    	shortcuts: false,
+  	},
 
+  	home:	function (req,res) {
+  		var slug = req.param("slug");
 
-		viewdata = {
-			pageTitle	: "Almastore :: IIM Ranchi",
-			store		: {
-				title	: "IIM Ranchi",
-				subTitle: "The Official Merchandise Store of IIM Ranchi"
-			},
-			people: [
-				{firstName: "Yehuda", lastName: "Katz"},
-				{firstName: "Carl", lastName: "Lerche"},
-				{firstName: "Alan", lastName: "Johnson"}
-		    ],
+  		Store.findOne()
+  		.where({storeAlias: slug})
+  		.populate('products')
+  		.then(function(result) {
+  			var viewdata = [];
 
-			currentDate	: (new Date()).toString()
-		}
-		return res.view('storehome',viewdata);
+  			if(!result){
+  				viewdata.pageTitle = "Store Not Found";
+  				viewdata.errMessage= "Store Not Found";
+  			}else{
+  				viewdata.pageTitle = result.storeTitle +" :: Almastore"
+  				viewdata.store	   = result;
+  			}
+
+  			var storesList    = 	Store.find().then(function(result){
+  				return result;
+  			});
+
+  			return [viewdata,storesList];
+  		})
+  		.spread(function(viewdata,storesList){
+  			viewdata.storesList = storesList;
+			return res.view('storehome',viewdata);
+  		})
+  		.fail(function(err){
+  			if (err) return res.negotiate(err);
+  		});
+
 	}
-};
 
+};

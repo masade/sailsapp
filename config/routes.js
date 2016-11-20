@@ -21,7 +21,7 @@ module.exports.routes = {
     }
   },
 
-  '/store':'StoreController.home',
+  '/store/:slug':'StoreController.home'
 
 
 };

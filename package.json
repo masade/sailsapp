@@ -18,8 +18,10 @@
     "grunt-contrib-watch": "1.0.0",
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.5.2",
+    "gulp": "^3.9.1",
     "handlebars": "^4.0.6",
     "include-all": "^1.0.0",
+    "mustache": "^2.3.0",
     "rc": "1.0.1",
     "sails": "~0.12.10",
     "sails-disk": "~0.10.9"

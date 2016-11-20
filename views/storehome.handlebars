@@ -1,43 +1,36 @@
 <div class="default-page">
     <div class="header">
-        <h1 id="main-title" class="container">{{ifed store.title 'Almastore'}}</h1>
-        <h3 class="container">{{ifed store.subTitle 'The Official Merchandise Store'}}</h3>
+    {{#if errMessage}}
+        <h1 id="main-title" class="container">{{ errMessage }}</h1>
+    {{else}}
+        <h1 id="main-title" class="container">{{ifed store.storeTitle 'Almastore'}}</h1>
+        <h3 class="container">{{ifed store.storeSubtitle 'The Official Merchandise Store'}}</h3>
+    {{/if}}
     </div>
     <div class="main container clearfix">
         <!-- <h1>Getting started</h1>
         <p>Don't worry, we've got your back.</p> -->
         <ul class="getting-started">
             <li class="clearfix">
+            {{#each store.products}}
                 <div class="step">
-                    <div class="sprite one"></div>
-                    <h3>Product Name</h3>
-                    <p>
-                    Product Details
-                    <p>{{{ifed  store.title 'my name'}}}</p>
+                    <h3>{{name}}</h3>
+                    <p><code>{{type}}</code> {{description}}</p>
                     </p>
+                    <hr/>
                 </div>
+            {{/each}}
             </li>
         </ul>
 
 
         <div class="links">
-            <!-- <h3>Links</h3> -->
+             {{!-- <h3>All Stores</h3> --}}
             <ul class="link-list">
-
-                <h4>Docs</h4>
-                <a target="_blank" href="http://sailsjs.org/#!documentation/anatomy"><li>App Structure</li></a>
-                <a target="_blank" href="http://sailsjs.org/#!documentation/reference"><li>Reference</li></a>
-                <a target="_blank" href="http://links.sailsjs.org/docs/faq"><li>FAQ</li></a>
-                <a target="_blank" href="http://sailsjs.org"><li>Supported Databases</li></a>
-
-                <h4>Tutorials</h4>
-                <a target="_blank" href="http://links.sailsjs.org/community/sails101"><li>Sails 101</li></a>
-
-                <h4>Community</h4>
-                <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
-                <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
-                <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
-                <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
+                <h4>All Stores</h4>
+                {{#each storesList}}
+                <a href="/store/{{storeAlias}}"><li>{{storeTitle}}</li></a>
+                {{/each}}
 
             </ul>
         </div>
